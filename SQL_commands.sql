@@ -86,3 +86,34 @@ SELECT name
 FROM companies
 WHERE name LIKE 'DataC_mp';
 --You can also use the NOT LIKE operator to find records that don't match the pattern you specify.
+
+--Aggregate functions
+--Often, you will want to perform some calculation on the data in a database. SQL provides a few functions, called aggregate functions, to help you out with this.
+
+--For example,
+
+SELECT AVG(budget)
+FROM films;
+
+--Aggregate functions can be combined with the WHERE clause to gain further insights from your data.
+
+--For example, to get the total budget of movies made in the year 2010 or later:
+
+SELECT SUM(budget)
+FROM films
+WHERE release_year >= 2010;
+
+--A note on arithmetic
+--In addition to using aggregate functions, you can perform basic arithmetic with symbols like +, -, *, and /.
+
+--So, for example, this gives a result of 12:
+
+SELECT (4 * 3);
+
+--Aliasing simply means you assign a temporary name to something. To alias, you use the AS keyword, which you've already seen earlier in this course.
+
+--For example, in the above example we could use aliases to make the result clearer:
+
+SELECT MAX(budget) AS max_budget,
+       MAX(duration) AS max_duration
+FROM films;
