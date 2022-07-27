@@ -117,3 +117,11 @@ SELECT (4 * 3);
 SELECT MAX(budget) AS max_budget,
        MAX(duration) AS max_duration
 FROM films;
+
+--In SQL, the ORDER BY keyword is used to sort results in ascending or descending order according to the values of one or more columns.
+
+--By default ORDER BY will sort in ascending order. If you want to sort the results in descending order, you can use the DESC keyword. For example,
+
+SELECT title
+FROM films
+ORDER BY release_year DESC;
