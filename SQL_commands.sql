@@ -125,3 +125,27 @@ FROM films;
 SELECT title
 FROM films
 ORDER BY release_year DESC;
+
+--Sorting single columns (DESC)
+--To order results in descending order, you can put the keyword DESC after your ORDER BY.
+--ORDER BY can also be used to sort on multiple columns. It will sort by the first column specified, then sort by the next, then the next, and so on.
+SELECT birthdate, name
+FROM people
+ORDER BY birthdate, name;
+
+--GROUP BY practice
+--Note that you can combine GROUP BY with ORDER BY to group your results, calculate something about them, and then order your results. For example,
+
+SELECT sex, count(*)
+FROM employees
+GROUP BY sex
+ORDER BY count DESC;
+
+--HAVING a great time
+--In SQL, aggregate functions can't be used in WHERE clauses.
+--That's where the HAVING clause comes in. For example,
+
+SELECT release_year
+FROM films
+GROUP BY release_year
+HAVING COUNT(title) > 10;
