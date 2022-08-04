@@ -149,3 +149,11 @@ SELECT release_year
 FROM films
 GROUP BY release_year
 HAVING COUNT(title) > 10;
+
+--Inner join
+--the basic syntax for an INNER JOIN, here including all columns in both tables:
+
+SELECT *
+FROM left_table
+INNER JOIN right_table
+ON left_table.id = right_table.id;
